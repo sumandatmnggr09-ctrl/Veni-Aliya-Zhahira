@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Veni Aliya Zhahira 💗</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; overflow:hidden;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background:linear-gradient(135deg,#fff7fb,#ffe5f0,#fff);
+    display:flex; align-items:center; justify-content:center;
+    color:#49343d;
+  }
+  .hearts span{
+    position:fixed; top:-40px; font-size:20px; opacity:.75;
+    animation:fall linear infinite; pointer-events:none;
+  }
+  @keyframes fall{
+    to{transform:translateY(115vh) rotate(360deg); opacity:.15}
+  }
+  .card{
+    width:min(92vw,520px); background:rgba(255,255,255,.93);
+    border:3px solid #f5bfd2; border-radius:28px;
+    box-shadow:0 18px 50px rgba(172,92,123,.20);
+    padding:28px 22px 24px; text-align:center; position:relative;
+  }
+  .sparkle{font-size:30px}
+  h1{font-size:25px;margin:8px 0 4px;color:#d75b86}
+  .sub{font-size:14px;color:#9b6d7e;margin-bottom:18px}
+  .pixel{
+    font-size:60px; margin:5px 0 2px;
+    animation:bounce 1.6s ease-in-out infinite;
+  }
+  @keyframes bounce{50%{transform:translateY(-8px)}}
+  .letter{
+    background:#fff9fc;border:2px dashed #efabc6;border-radius:18px;
+    padding:18px;margin:16px 0;font-size:16px;line-height:1.65;
+  }
+  .question{font-size:20px;font-weight:700;margin:18px 0 14px}
+  .buttons{display:flex;gap:14px;justify-content:center;position:relative;height:58px}
+  button{
+    border:0;border-radius:999px;padding:13px 25px;font-size:16px;
+    font-weight:700;cursor:pointer;transition:.2s;
+    box-shadow:0 7px 15px rgba(0,0,0,.10)
+  }
+  #yes{background:#ff78a7;color:white}
+  #no{background:#f1e7eb;color:#765b66;position:relative}
+  button:hover{transform:scale(1.05)}
+  .tiny{font-size:12px;color:#a48791;margin-top:15px}
+  #result{display:none}
+  .biglove{font-size:27px;color:#d94d7e;font-weight:800}
+  .music{
+    margin-top:16px;padding:12px;border-radius:16px;
+    background:#fff0f6;border:1px solid #f4c4d7;
+  }
+  .music button{background:#5b4960;color:white;font-size:14px;padding:10px 16px}
+  .music small{display:block;margin-top:7px;color:#8e737e}
+  .modal{
+    position:fixed;inset:0;background:rgba(65,35,49,.45);
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  .modalbox{
+    width:min(92vw,480px);background:white;border-radius:25px;padding:28px;
+    text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.25);
+  }
+  .modalbox h2{color:#d94d7e}
+  .close{background:#ff78a7;color:white;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+
+<div class="card">
+  <div class="sparkle">💗 ✨ 💐 ✨ 💗</div>
+  <div class="pixel">🐻</div>
+  <h1>Hey, Veni Aliya Zhahira...</h1>
+  <div class="sub">I made this little thing just for you.</div>
+
+  <div class="letter">
+    In every universe,<br>
+    in every lifetime,<br>
+    I would still choose you.<br><br>
+    Maybe I don't have the perfect words,<br>
+    but I know one thing for sure...
+  </div>
+
+  <div class="question">Will you be my girlfriend? 🥺👉👈</div>
+
+  <div class="buttons">
+    <button id="yes">YES! 💗</button>
+    <button id="no">NO 😭</button>
+  </div>
+
+  <div class="music">
+    <button onclick="window.open('https://www.youtube.com/watch?v=s3CjsNjiKyc','_blank')">
+      🎵 Play “VERY NICE” — SEVENTEEN
+    </button>
+    <small>Tap the button to open the song on YouTube.</small>
+  </div>
+
+  <div class="tiny">P.S. choosing YES comes with unlimited smiles. ♡</div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modalbox">
+    <div style="font-size:55px">💐🥹💗</div>
+    <h2>YOU SAID YES!</h2>
+    <p class="biglove">In every universe, it would always be you.</p>
+    <p>
+      I love you 3000.<br>
+      And yes... this is officially my favorite universe. ✨
+    </p>
+    <p>— Christofell</p>
+    <button class="close" onclick="document.getElementById('modal').style.display='none'">♡ close</button>
+  </div>
+</div>
+
+<script>
+  const hearts=document.getElementById('hearts');
+  const symbols=['♡','♥','💗','🌸','✨','💐'];
+  for(let i=0;i<22;i++){
+    const s=document.createElement('span');
+    s.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDuration=(5+Math.random()*7)+'s';
+    s.style.animationDelay=(-Math.random()*10)+'s';
+    s.style.fontSize=(14+Math.random()*18)+'px';
+    hearts.appendChild(s);
+  }
+
+  const no=document.getElementById('no');
+  function escapeNo(){
+    const x=(Math.random()*260)-130;
+    const y=(Math.random()*90)-45;
+    no.style.transform=`translate(${x}px,${y}px)`;
+    no.textContent=['NO 😭','are you sure? 🥺','try again 😭','NOPE 💗'][Math.floor(Math.random()*4)];
+  }
+  no.addEventListener('mouseenter',escapeNo);
+  no.addEventListener('touchstart',(e)=>{e.preventDefault();escapeNo();});
+
+  document.getElementById('yes').addEventListener('click',()=>{
+    document.getElementById('modal').style.display='flex';
+    for(let i=0;i<35;i++){
+      const s=document.createElement('span');
+      s.textContent=['💗','💖','💘','✨','🌸'][Math.floor(Math.random()*5)];
+      s.style.position='fixed'; s.style.left=(20+Math.random()*60)+'vw';
+      s.style.top=(30+Math.random()*40)+'vh'; s.style.fontSize=(18+Math.random()*25)+'px';
+      s.style.zIndex=9999; s.style.transition='2s';
+      document.body.appendChild(s);
+      setTimeout(()=>{s.style.transform=`translate(${(Math.random()-0.5)*500}px,-${200+Math.random()*400}px) rotate(${Math.random()*360}deg)`;s.style.opacity=0;},30);
+      setTimeout(()=>s.remove(),2200);
+    }
+  });
+</script>
+</body>
+</html>
